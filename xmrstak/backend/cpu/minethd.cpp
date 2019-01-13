@@ -642,7 +642,7 @@ minethd::cn_hash_fun minethd::func_multi_selector(bool bHaveAes, bool bNoPrefetc
 			if (N == 1 && selected_asm == "amd_avx")
 			{
 				// AMD Ryzen (1xxx and 2xxx series)
-				selected_function = Cryptonight_hash_asm<1u, 0u>::template hash<cryptonight_monero_v8>;
+				selected_function = Cryptonight_hash_asm<2u, 0u>::template hash<cryptonight_monero_v8>;
 			}
 			
 			if (asm_version_str == "auto" && (selected_asm != "intel_avx" || selected_asm != "amd_avx"))
