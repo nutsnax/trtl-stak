@@ -642,8 +642,9 @@ minethd::cn_hash_fun minethd::func_multi_selector(bool bHaveAes, bool bNoPrefetc
 			if (N == 1 && selected_asm == "amd_avx")
 			{
 				// AMD Ryzen (1xxx and 2xxx series)
-				selected_function = Cryptonight_hash_asm<1u, 1u>::template hash<cryptonight_monero_v8>;
+				selected_function = Cryptonight_hash_asm<1u, 0u>::template hash<cryptonight_monero_v8>;
 			}
+			
 			if (asm_version_str == "auto" && (selected_asm != "intel_avx" || selected_asm != "amd_avx"))
 				printer::inst()->print_msg(L3, "Switch to assembler version for '%s' cpu's", selected_asm.c_str());
 			else if (selected_asm != "intel_avx" && selected_asm != "amd_avx") // unknown asm type
